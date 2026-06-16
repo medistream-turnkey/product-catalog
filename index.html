@@ -41,6 +41,8 @@
   .sizes{margin-top:7px;font-size:11px;color:#9aa0a8;}
   .onshowwrap{margin-top:8px;}
   .onshow{font-size:11px;font-weight:700;color:#1f9d6b;background:#e8f6ef;border-radius:14px;padding:2px 9px;}
+  .cardfoot{margin-top:auto;padding-top:10px;display:flex;align-items:center;gap:6px;}
+  .code{margin-left:auto;font-size:11px;font-weight:800;color:var(--accent);background:#eef1f6;border:1px solid #dce2ec;border-radius:7px;padding:2px 8px;letter-spacing:.3px;}
   /* 검색 */
   .search{position:relative;margin:22px 0 2px;}
   .search input{width:100%;font-size:16px;padding:14px 18px 14px 46px;border:1.5px solid var(--line);border-radius:30px;background:#fff;outline:none;font-family:inherit;}
@@ -99,20 +101,22 @@ function chip(c){
 }
 function cardHTML(p, opt){
   opt = opt || {};
-  const bigBadge = opt.big ? ' big' : '';
-  const badge = p.code ? '<span class="badge'+bigBadge+'">'+p.code+'</span>' : '';
-  const disp2 = p.sampleNo ? '<span class="onshow">● 전시중</span>' : '';
+  const isSample = !!p.sampleNo;
+  // 전시 샘플인 상품에만 코드 표시 (본문 우측 최하단), 전시중 배지는 좌측
+  const onshowEl = isSample ? '<span class="onshow">● 전시중</span>' : '';
+  const codeEl = (isSample && p.code) ? '<span class="code">'+p.code+'</span>' : '';
+  const footEl = (onshowEl || codeEl) ? '<div class="cardfoot">'+onshowEl+codeEl+'</div>' : '';
   const thumb = p.thumb
     ? '<img class="ph" loading="lazy" src="'+p.thumb+'" alt="" onerror="this.remove()"><span class="ini">'+(p.initial||'')+'</span>'
     : '<span class="ini">'+(p.initial||'')+'</span>';
   return '<a class="card" href="'+p.url+'" target="_blank" rel="noopener">'+
-    '<div class="thumb">'+badge+thumb+'</div>'+
+    '<div class="thumb">'+thumb+'</div>'+
     '<div class="body">'+
       (opt.showGroup?'<div class="gtag">'+p.cat+' · '+p.grp+'</div>':'')+
       '<div class="nm">'+p.disp+'</div>'+
       (p.color?'<div class="meta">'+chip(p.color)+'</div>':'')+
       (p.sizes?'<div class="sizes">'+p.sizes+'</div>':'')+
-      (disp2?'<div class="onshowwrap">'+disp2+'</div>':'')+
+      footEl+
     '</div></a>';
 }
 function render(){
