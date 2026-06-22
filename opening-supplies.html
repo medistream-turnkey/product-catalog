@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{--blue:#1f6dff;--blue-deep:#0b46c0;--blue-soft:#eaf1ff;--ink:#1a2233;--ink-soft:#6b7588;--line:#e6ebf3;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Pretendard','Malgun Gothic',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @page{size:A4;margin:0;}
+  .page{width:210mm;height:297mm;position:relative;background:#fff;page-break-after:always;overflow:hidden;}
+  .page:last-child{page-break-after:auto;}
+
+  /* cover */
+  .cover{display:flex;flex-direction:column;}
+  .cover .topbar{height:7mm;background:linear-gradient(90deg,var(--blue),var(--blue-deep));}
+  .cover .body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+  .smile{width:74px;height:74px;margin-bottom:28px;}
+  .badge{display:inline-block;background:var(--blue-soft);color:var(--blue-deep);font-weight:700;font-size:11pt;padding:5px 16px;border-radius:30px;margin-bottom:22px;letter-spacing:.5px;}
+  .cover h1{font-size:16pt;color:var(--ink-soft);font-weight:600;margin-bottom:6px;}
+  .cover h2{font-size:33pt;font-weight:800;line-height:1.32;}
+  .cover h2 b{color:var(--blue);}
+  .cover .chips{margin-top:30px;max-width:130mm;}
+  .cover .chips span{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:4px 13px;margin:3px;font-weight:600;font-size:10.5pt;}
+  .cover .foot{padding-bottom:22mm;text-align:center;color:var(--ink-soft);font-size:9.5pt;}
+  .logo{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13pt;color:var(--ink);}
+  .logo .mk{width:24px;height:24px;border-radius:6px;background:var(--blue);}
+
+  /* contents */
+  .content{padding:6mm 16mm;}
+  .h-eyebrow{color:var(--blue);font-weight:800;font-size:11pt;letter-spacing:1px;padding:11mm 16mm 0;}
+  .h-title{font-size:22pt;font-weight:800;padding:4px 16mm 0;margin-bottom:8mm;}
+  .toc{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 16mm;}
+  .toc-item{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:11px;padding:12px 15px;}
+  .toc-item .no{width:30px;height:30px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:12pt;flex-shrink:0;}
+  .toc-item .tx{flex:1;}
+  .toc-item .tx b{font-size:11.5pt;font-weight:800;display:block;}
+  .toc-item .tx span{font-size:9pt;color:var(--ink-soft);}
+  .toc-item .pg{font-size:10pt;color:var(--blue-deep);font-weight:800;}
+
+  /* package page */
+  .secbar{height:13mm;background:linear-gradient(90deg,var(--blue),var(--blue-deep));display:flex;align-items:center;padding:0 16mm;color:#fff;}
+  .secbar .num{font-size:17pt;font-weight:800;margin-right:10px;opacity:.85;}
+  .secbar .ttl{font-size:16pt;font-weight:800;}
+  .tagline{padding:5.5mm 16mm 0;font-size:10.5pt;color:var(--ink-soft);font-weight:600;}
+  .pk{padding:4mm 16mm;}
+
+  .cat{margin-bottom:3.5mm;}
+  .cat .label{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+  .cat .label b{font-size:11.5pt;font-weight:800;color:var(--blue-deep);}
+  .cat .label .brands{font-size:8.5pt;color:var(--ink-soft);font-weight:500;}
+  .cat .label::before{content:"";width:5px;height:15px;background:var(--blue);border-radius:3px;}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;}
+  .item .ph{aspect-ratio:1/1;width:100%;max-width:27mm;margin:0 auto 5px;border:1px solid var(--line);border-radius:10px;background:#fafbfe;display:flex;align-items:center;justify-content:center;color:#bcc6d6;font-size:8pt;}
+  .item .nm{font-size:9pt;font-weight:700;text-align:center;line-height:1.25;}
+
+  .pagefoot{position:absolute;bottom:8mm;right:16mm;font-size:9pt;color:var(--ink-soft);font-weight:700;}
+  .pagefoot-l{position:absolute;bottom:8mm;left:16mm;font-size:9pt;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="page cover">
+  <div class="topbar"></div>
+  <div class="body">
+    <svg class="smile" viewBox="0 0 100 100" fill="none">
+      <path d="M30 20 H75 V32" stroke="#1f6dff" stroke-width="6" stroke-linecap="round"/>
+      <path d="M30 20 V70" stroke="#1f6dff" stroke-width="6" stroke-linecap="round"/>
+      <path d="M44 40 a10 10 0 0 0 20 0" stroke="#1f6dff" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <div class="badge">2026 EDITION</div>
+    <h1>메디마켓</h1>
+    <h2>개원을 위한<br><b>소모품 추천상품</b></h2>
+    <div class="chips">
+      <span>스탠다드</span><span>피부·미용</span><span>원탕</span><span>가전·가구</span>
+      <span>메디컬 의류</span><span>상담자료</span><span>도서</span><span>비품</span>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="logo"><span class="mk"></span>Medistream</div>
+    <div style="margin-top:9px;">2026.06 기준</div>
+  </div>
+</div>
+
+<!-- CONTENTS -->
+<div class="page">
+  <div class="h-eyebrow">CONTENTS</div>
+  <div class="h-title">8개 패키지 한눈에 보기</div>
+  <div class="toc">
+    <div class="toc-item"><div class="no">1</div><div class="tx"><b>스탠다드 패키지</b><span>운영 필수 기본 소모품</span></div><div class="pg">P.01</div></div>
+    <div class="toc-item"><div class="no">2</div><div class="tx"><b>피부·미용 패키지</b><span>피부미용 시술 전 품목</span></div><div class="pg">P.02</div></div>
+    <div class="toc-item"><div class="no">3</div><div class="tx"><b>원탕 패키지</b><span>원내탕전 한약재·소모품</span></div><div class="pg">P.03</div></div>
+    <div class="toc-item"><div class="no">4</div><div class="tx"><b>가전·가구 패키지</b><span>원장실·대기실·치료실</span></div><div class="pg">P.04</div></div>
+    <div class="toc-item"><div class="no">5</div><div class="tx"><b>메디컬 의류 패키지</b><span>스크럽·가운·신발·환자복</span></div><div class="pg">P.05</div></div>
+    <div class="toc-item"><div class="no">6</div><div class="tx"><b>상담자료 패키지</b><span>캘리디자인·리플렛·모형</span></div><div class="pg">P.06</div></div>
+    <div class="toc-item"><div class="no">7</div><div class="tx"><b>도서 패키지</b><span>진료에 바로 쓰는 책</span></div><div class="pg">P.07</div></div>
+    <div class="toc-item"><div class="no">8</div><div class="tx"><b>비품 패키지</b><span>일반 물품·간식·티/커피</span></div><div class="pg">P.08</div></div>
+  </div>
+</div>
+
+<!-- 1 STANDARD -->
+<div class="page">
+  <div class="secbar"><span class="num">01</span><span class="ttl">스탠다드 패키지</span></div>
+  <div class="tagline">한의원 운영에 꼭 필요한 기본적인 소모품 패키지</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>침 / 도침</b><span class="brands">동방메디칼 · SMC · KM · 다나메디칼 · 우전침구 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">SMC 호침</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">동방 호침</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">KM 침</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">우전 도침</div></div></div></div>
+    <div class="cat"><div class="label"><b>부항 / 부항건</b><span class="brands">동방메디칼 · 성호 · 대건 · 굿플 부항건 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">일반 부항</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">자동 부항</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">유리 부항</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">부항건</div></div></div></div>
+    <div class="cat"><div class="label"><b>란셋</b><span class="brands">세이프란 · 나노렛 · 사혈기(자동/수동) 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">세이프란 30G</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">세이프란 26G</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">나노렛</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">사혈기</div></div></div></div>
+    <div class="cat"><div class="label"><b>주사기</b><span class="brands">백톤디킨스(BD) · 성심의료기 · 정림의료기 · EZ주사기 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">BD 인슐린주사기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">성심 주사기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">EZ 필터주사기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">동방 필젯</div></div></div></div>
+    <div class="cat"><div class="label"><b>의료용 소모품</b><span class="brands">크린셸 · 탈지면 · 그린덱스 · 온뜸테이프 · 멸균패드 · 라텍스글러브 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">크린셸</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">탈지면</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">멸균패드</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">라텍스글러브</div></div></div></div>
+    <div class="cat"><div class="label"><b>의약품 / 일반품목</b><span class="brands">한방파스 · 엠마오크림 · 라이넥주 · 밧드 · 솜통 · 핫팩 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">한방파스</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">엠마오크림</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">밧드</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">핫팩</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">01</div>
+</div>
+
+<!-- 2 SKIN -->
+<div class="page">
+  <div class="secbar"><span class="num">02</span><span class="ttl">피부 / 미용 패키지</span></div>
+  <div class="tagline">피부미용에 필요한 모든 것, 메디스트림에서 구매하세요</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>매선</b><span class="brands">채움매선 · 더마라인 · 시크릿 라인 · 동방 미라큐 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">채움매선</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">더마라인</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">시크릿 라인</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">미라큐</div></div></div></div>
+    <div class="cat"><div class="label"><b>스킨부스터</b><span class="brands">큐티셀K · PDX5 · 미라콜 · 엑소제(스킨/헤어) 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">큐티셀K</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">미라콜</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">PDX5</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">엑소제</div></div></div></div>
+    <div class="cat"><div class="label"><b>필러 / 보톡스</b><span class="brands">필로드 · 바이오플러스 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">필로드</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">쥬벨릭스</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">스킨플러스-히알</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">바이오듀</div></div></div></div>
+    <div class="cat"><div class="label"><b>시술 전/후 관리 화장품</b><span class="brands">필링제 · 마스크팩 · 더마코스메틱 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">LHA 필링</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">포스트케어크림</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">GP크림</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">디렉소 앰플</div></div></div></div>
+    <div class="cat"><div class="label"><b>MTS 기기 / 뷰티디바이스</b><span class="brands">멀티마스터 · 오토디엔 · 오멜론 오메가라이트 2세대 · 스티머 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">멀티마스터</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">오토디엔</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">오메가라이트</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">스티머</div></div></div></div>
+    <div class="cat"><div class="label"><b>피부미용 기타</b><span class="brands">메조니들 · 딥페어 · 퍼프 · 브러시 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">메조니들 34G</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">딥페어</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">화장 퍼프</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">브러시</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">02</div>
+</div>
+
+<!-- 3 WONTANG -->
+<div class="page">
+  <div class="secbar"><span class="num">03</span><span class="ttl">원탕 패키지</span></div>
+  <div class="tagline">원내탕전 운영에 필요한 한약재, 녹용부터 기타 소모품까지 한번에</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>한약재</b><span class="brands">수 한약재 · 메디스트림 스탠다드 한약재 · 법제한약재 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">수 한약재</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">녹용</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">스탠다드 한약재</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">법제한약재</div></div></div></div>
+    <div class="cat"><div class="label"><b>금박</b><span class="brands">동양금박 · 광명금박 · 금설화 식용금박 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">동양금박</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">광명금박</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">금설화 식용금박</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div></div></div>
+    <div class="cat"><div class="label"><b>탕전실 소모품</b><span class="brands">한약 파우치 · 한약 박스 · 청병 · 추출자루 · 거름망 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">한약 파우치</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">한약 박스</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">청병</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">추출자루·거름망</div></div></div></div>
+    <div class="cat"><div class="label"><b>탕전 보조제품</b><span class="brands">조제용 자하거 추출물 · 스윗팜 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">자하거 추출물</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">스윗팜</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">자하거 추출물 세트</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">03</div>
+</div>
+
+<!-- 4 APPLIANCE -->
+<div class="page">
+  <div class="secbar"><span class="num">04</span><span class="ttl">가전 / 가구 패키지</span></div>
+  <div class="tagline">원장실, 대기실, 치료실과 가정에 필요한 가전 / 가구 한번에</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>원장실</b><span class="brands">의자 · PC · 데스크 용품 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">사무용 의자</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">헤드형 의자</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">스툴</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">PC / 노트북</div></div></div></div>
+    <div class="cat"><div class="label"><b>대기실</b><span class="brands">사이니지 · 황금다리 · 공기청정기 · 세라젬 · 소파 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">사이니지</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">공기청정기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">세라젬</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">안마소파</div></div></div></div>
+    <div class="cat"><div class="label"><b>치료실</b><span class="brands">아이웰니스 · 도도텍 · 온열베개 · 드레싱카 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">자동베드</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">타임콜</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">온열베개</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">드레싱카</div></div></div></div>
+    <div class="cat"><div class="label"><b>비품실</b><span class="brands">세탁기 · 건조기 · 청소기 · 냉장고 · 미니냉장고 · 핫팩유니트 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">세탁/건조기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">로봇청소기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">미니냉장고</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">핫팩유니트</div></div></div></div>
+    <div class="cat"><div class="label"><b>탕전실</b><span class="brands">약탕기 · 포장기 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">약탕기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">포장기</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">04</div>
+</div>
+
+<!-- 5 CLOTHING -->
+<div class="page">
+  <div class="secbar"><span class="num">05</span><span class="ttl">메디컬 의류 패키지</span></div>
+  <div class="tagline">스크럽 · 가운 · 환자복 · 신발까지 추천/필수 메디컬 의류를 한곳에서</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>스크럽</b><span class="brands">아크메시 · 아스페카 · 메디린 · 애트블로 · 포르테</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">아크메시</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">아스페카</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">메디린</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">애트블로</div></div></div></div>
+    <div class="cat"><div class="label"><b>가운 / 자켓</b><span class="brands">아크메시 · 아스페카 · 메디린 · 애트블로 · 포르테</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">가디건</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">화이트 가운</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">자켓</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">셔츠 자켓</div></div></div></div>
+    <div class="cat"><div class="label"><b>신발</b><span class="brands">르무통 · 밸롭 · 부기프리</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">스니커즈</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">슬리퍼</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">부기프리 슬리퍼</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div></div></div>
+    <div class="cat"><div class="label"><b>직원 유니폼</b><span class="brands">메디린 · 애트블로 · 위드메디</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">유니폼 상의</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">유니폼 세트</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">유니폼(그레이)</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">유니폼 팬츠</div></div></div></div>
+    <div class="cat"><div class="label"><b>환자복</b><span class="brands">위드메디 · 인텍스 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">환자복(블랙)</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">환자복(네이비)</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">환자복(체크)</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">05</div>
+</div>
+
+<!-- 6 CONSULT -->
+<div class="page">
+  <div class="secbar"><span class="num">06</span><span class="ttl">상담자료 패키지</span></div>
+  <div class="tagline">상담 시간을 줄여드립니다</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>상담자료</b><span class="brands">개원의를 위한 캘리디자인 · 질환별 자가진단 · 한의학 치료수단 · 상담용 3D 영상 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">캘리디자인 Best 3</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">질환별 자가진단</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">한의학 치료수단</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">진료/상담용 3D 영상</div></div></div></div>
+    <div class="cat"><div class="label"><b>리플렛 / 홍보자료</b><span class="brands">자동차보험 진료 홍보 리플렛 · 포스터 4종 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">치료비 한도 계산기</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">자보 홍보 포스터</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">치료비 한도 포스터</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div></div></div>
+    <div class="cat"><div class="label"><b>인체모형</b><span class="brands">지방모형 1KG · 무릎 관절 33cm · 어깨 관절 21cm 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">지방모형 1KG</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">무릎 관절모형</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">어깨 관절모형</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 품목</div><div class="nm">&nbsp;</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">06</div>
+</div>
+
+<!-- 7 BOOKS -->
+<div class="page">
+  <div class="secbar"><span class="num">07</span><span class="ttl">도서 패키지</span></div>
+  <div class="tagline">이론이 아닌, 오늘 진료에 바로 쓰는 책</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>근골격계</b></div>
+      <div class="grid"><div class="item"><div class="ph">표지</div><div class="nm">초음파로 보는 알짜 근육학</div></div><div class="item"><div class="ph">표지</div><div class="nm">통증치료의 혁명</div></div><div class="item"><div class="ph">표지</div><div class="nm">표면해부학과 근육촉진</div></div><div class="item"><div class="ph">표지</div><div class="nm">자연재생 상처치료</div></div></div></div>
+    <div class="cat"><div class="label"><b>본초 / 방제학</b></div>
+      <div class="grid"><div class="item"><div class="ph">표지</div><div class="nm">한약치료 기본분석 실전</div></div><div class="item"><div class="ph">표지</div><div class="nm">한약처방 강의</div></div><div class="item"><div class="ph">표지</div><div class="nm">한방 에센스</div></div><div class="item"><div class="ph">표지</div><div class="nm">스토리텔링 한약처방</div></div></div></div>
+    <div class="cat"><div class="label"><b>부인 / 소아 / 오관 / 피부 / 정신</b></div>
+      <div class="grid"><div class="item"><div class="ph">표지</div><div class="nm">한의 이비인후과학 ATLAS</div></div><div class="item"><div class="ph">표지</div><div class="nm">자율신경계</div></div><div class="item"><div class="ph">표지</div><div class="nm">이명난청 완치설명서</div></div><div class="item"><div class="ph">표지</div><div class="nm">피부 관련 도서</div></div></div></div>
+    <div class="cat"><div class="label"><b>진단 / 내과학 / 침구 / 경혈학</b></div>
+      <div class="grid"><div class="item"><div class="ph">표지</div><div class="nm">근골격계 초음파의 여행</div></div><div class="item"><div class="ph">표지</div><div class="nm">척추 초음파의 모든 것</div></div><div class="item"><div class="ph">표지</div><div class="nm">사상방 사용설명서</div></div><div class="item"><div class="ph">표지</div><div class="nm">이제마, 인간을 말하다</div></div></div></div>
+    <div class="cat"><div class="label"><b>마케팅</b></div>
+      <div class="grid"><div class="item"><div class="ph">표지</div><div class="nm">마케터의 일</div></div><div class="item"><div class="ph">표지</div><div class="nm">사장학개론</div></div><div class="item"><div class="ph">표지</div><div class="nm">세일즈 부트캠프</div></div><div class="item"><div class="ph" style="border-style:dashed;">추가 도서</div><div class="nm">&nbsp;</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">07</div>
+</div>
+
+<!-- 8 SUPPLIES -->
+<div class="page">
+  <div class="secbar"><span class="num">08</span><span class="ttl">비품 패키지</span></div>
+  <div class="tagline">한의원에 필요한 일반 물품도 이제는 메디에서 구매하세요</div>
+  <div class="pk">
+    <div class="cat"><div class="label"><b>일반품목</b><span class="brands">모든오피스 · 현대교역 · 베베숲 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">마커펜</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">베개</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">가위</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">방향제</div></div></div></div>
+    <div class="cat"><div class="label"><b>일반품목 (2)</b><span class="brands">아크릴 거치대 · 종이컵 · 물티슈 · 테이핑가위 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">아크릴 거치대</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">종이컵</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">물티슈</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">테이핑가위</div></div></div></div>
+    <div class="cat"><div class="label"><b>간식</b><span class="brands">타무르 · 몽쉘 · 빈츠 · 초코파이 · 쿠크다스 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">타무르 대추야자</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">몽쉘</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">빈츠</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">초코파이 외</div></div></div></div>
+    <div class="cat"><div class="label"><b>티 / 커피</b><span class="brands">스미스 티 · 카누 · 티오 · 맥심 · 미니 아메리카노 외</span></div>
+      <div class="grid"><div class="item"><div class="ph">상품 사진</div><div class="nm">스미스 티</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">카누</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">티오 / 맥심</div></div><div class="item"><div class="ph">상품 사진</div><div class="nm">미니 아메리카노</div></div></div></div>
+  </div>
+  <div class="pagefoot-l">메디마켓 개원 추천상품</div><div class="pagefoot">08</div>
+</div>
+
+</body>
+</html>
